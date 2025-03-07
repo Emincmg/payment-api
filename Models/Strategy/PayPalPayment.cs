@@ -1,5 +1,5 @@
 using PaymentProcessorDotnet.DTOs;
-using PaymentProcessorDotnet.Interfaces;
+using PaymentProcessorDotnet.Interfaces.Payment;
 
 namespace PaymentProcessorDotnet.Models.Strategy
 {
@@ -7,7 +7,16 @@ namespace PaymentProcessorDotnet.Models.Strategy
     {
         private readonly ILogger<PayPalPayment> _logger;
         private readonly IConfiguration _configuration;
-
+        public int Id { get; set; }
+        public float Amount { get; set; }
+        public string Currency { get; set; }
+        public string Status { get; set; }
+        public DateTime? ConfirmedAt { get; set; }
+        public DateTime? DeclinedAt { get; set; }
+        public int Tries { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        
         public PayPalPayment(IConfiguration configuration, ILogger<PayPalPayment> logger)
         {
             _configuration = configuration;

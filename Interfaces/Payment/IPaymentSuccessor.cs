@@ -1,6 +1,6 @@
 using PaymentProcessorDotnet.DTOs;
 
-namespace PaymentProcessorDotnet.Interfaces;
+namespace PaymentProcessorDotnet.Interfaces.Payment;
 
 public interface IPaymentSuccessor
 {

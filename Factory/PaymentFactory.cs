@@ -1,9 +1,10 @@
 using AutoMapper;
 using PaymentProcessorDotnet.DTOs;
 using PaymentProcessorDotnet.Interfaces;
+using PaymentProcessorDotnet.Interfaces.Payment;
 using PaymentProcessorDotnet.Models.Strategy;
 
-namespace PaymentProcessorDotnet.Models.Factory;
+namespace PaymentProcessorDotnet.Factory;
 
 public class PaymentFactory : IPaymentStrategy
 {

@@ -1,6 +1,7 @@
 using AutoMapper;
 using PaymentProcessorDotnet.DTOs;
 using PaymentProcessorDotnet.Interfaces;
+using PaymentProcessorDotnet.Interfaces.Payment;
 
 namespace PaymentProcessorDotnet.Mappings;
 
