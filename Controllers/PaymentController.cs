@@ -17,7 +17,7 @@ namespace PaymentPRocessorDotnet.Controllers
         [HttpGet("process")]
                 public IActionResult ProcessPayment()
                 {
-                    var requestDto = new PaymentRequestDto(
+                    var requestDto = new PaymentDto(
                         "channel", // Replace with actual channel value
                         100.0f,    // Replace with actual amount
                         "currency", // Replace with actual currency
