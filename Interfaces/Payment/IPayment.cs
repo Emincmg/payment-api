@@ -1,6 +1,6 @@
 namespace PaymentProcessorDotnet.Interfaces.Payment;
 
-public interface IPayment
+public interface IPayment :  IPaymentProcessor, IPaymentDecliner, IPaymentSuccessor
 {
     int Id { get; set; }
     float Amount { get; set; }

@@ -3,14 +3,14 @@ using PaymentProcessorDotnet.Interfaces.Payment;
 
 namespace PaymentProcessorDotnet.Models.Strategy
 {
-    public class PayPalPayment : IPayment, IPaymentProcessor, IPaymentDecliner, IPaymentStrategy, IPaymentSuccessor
+    public class PayPalPayment : IPayment
     {
         private readonly ILogger<PayPalPayment> _logger;
         private readonly IConfiguration _configuration;
         public int Id { get; set; }
         public float Amount { get; set; }
-        public string Currency { get; set; }
-        public string Status { get; set; }
+        public required string Currency { get; set; }
+        public string Status { get; set; } = "pending";
         public DateTime? ConfirmedAt { get; set; }
         public DateTime? DeclinedAt { get; set; }
         public int Tries { get; set; }
@@ -38,7 +38,7 @@ namespace PaymentProcessorDotnet.Models.Strategy
             throw new NotImplementedException();
         }
 
-        public IPayment GetPayment(PaymentDto dto)
+        public IPayment GetPayment()
         {
             throw new NotImplementedException();
         }

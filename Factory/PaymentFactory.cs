@@ -1,6 +1,5 @@
 using AutoMapper;
 using PaymentProcessorDotnet.DTOs;
-using PaymentProcessorDotnet.Interfaces;
 using PaymentProcessorDotnet.Interfaces.Payment;
 using PaymentProcessorDotnet.Models.Strategy;
 
@@ -25,7 +24,8 @@ public class PaymentFactory : IPaymentStrategy
     {
         return _paymentDto.PaymentMethod switch
         {
-            "paypal" => new PayPalPayment(_configuration, _logger),
+            "paypal" => _mapper.Map<PayPalPayment>(_paymentDto),
+            "stripe"=> _mapper.Map<StripePayment>(_paymentDto),
             _ => throw new NotImplementedException()
         };
     }
