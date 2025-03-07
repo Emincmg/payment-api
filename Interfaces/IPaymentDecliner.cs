@@ -4,5 +4,5 @@ namespace PaymentProcessorDotnet.Interfaces;
 
 public interface IPaymentDecliner
 {
-    public PaymentResponseDto Process(PaymentRequestDto requestDto);
+    public PaymentDto Decline(PaymentDto dto);
 }
