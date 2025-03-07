@@ -4,13 +4,9 @@ namespace PaymentProcessorDotnet.Services;
 
 public class PaymentService
 {
-    public PaymentResponseDto ProcessPayment(PaymentRequestDto paymentRequestDto)
+    public PaymentDto ProcessPayment(PaymentDto paymentDto)
     {
-        return new PaymentResponseDto(
-            "success",
-            "transactionId123",
-            "http://approval.url",
-            "Payment processed successfully"
-        );
+        return paymentDto;
     }
+    
 }
