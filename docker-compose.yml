@@ -9,7 +9,7 @@ services:
   payment-processor:
     image: mcr.microsoft.com/dotnet/aspnet:6.0
     ports: 
-      - "80:80""
+      - "80:80"
     depends_on: 
       - sqlserver
     environment:
