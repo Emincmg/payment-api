@@ -21,9 +21,9 @@ public class PaymentFactory : IPaymentStrategy
         _paymentDto = paymentDto;
     }
     
-    public IPayment GetPayment(PaymentDto dto)
+    public IPayment GetPayment()
     {
-        return dto.PaymentMethod switch
+        return _paymentDto.PaymentMethod switch
         {
             "paypal" => new PayPalPayment(_configuration, _logger),
             _ => throw new NotImplementedException()

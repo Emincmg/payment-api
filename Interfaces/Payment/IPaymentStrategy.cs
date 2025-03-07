@@ -4,5 +4,5 @@ namespace PaymentProcessorDotnet.Interfaces.Payment;
 
 public interface IPaymentStrategy
 {
-    public IPayment GetPayment(PaymentDto dto);
+    public IPayment GetPayment();
 }
