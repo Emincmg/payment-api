@@ -1,12 +1,54 @@
+using PaymentProcessorDotnet.FluentValidations;
 using PaymentProcessorDotnet.DTOs;
-using PaymentProcessorDotnet.Factory;
+using PaymentProcessorDotnet.Interfaces.Payment;
 
 namespace PaymentProcessorDotnet.Services;
 
 public class PaymentService
 {
-    public PaymentDto ProcessPayment(PaymentDto paymentDto)
+    private readonly ILogger<IPayment> _logger;
+    private readonly IConfiguration _configuration;
+    private PaymentDto? _paymentDto;
+    private readonly PaymentValidator _paymentValidator;
+    private readonly IPaymentStrategy _paymentFactory;
+
+    public PaymentService(ILogger<IPayment> logger, IConfiguration configuration,
+        IPaymentStrategy factory, PaymentValidator paymentValidator)
     {
-        return paymentDto;
+        _logger = logger;
+        _configuration = configuration;
+        _paymentFactory = factory;
+        _paymentValidator = paymentValidator;
+    }
+
+    public void SetPayment(PaymentDto paymentDto)
+    {
+        _paymentDto = paymentDto;
+    }
+
+    public IPayment GetPayment()
+    {
+        if (_paymentDto == null)
+        {
+            throw new ArgumentNullException(nameof(_paymentDto));
+        }
+
+        return _paymentFactory.GetPayment(_paymentDto);
+    }
+
+    public async Task<PaymentDto> ProcessPayment()
+    {
+        var payment = GetPayment();
+
+        // first line of defense, check if payment is null :d
+        if (payment == null)
+        {
+            throw new ArgumentNullException(nameof(payment));
+        }
+
+        // send the payment to the validator before processing
+        _paymentValidator.Validate(payment);
+
+        return await payment.Process()!;
     }
 }

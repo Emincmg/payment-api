@@ -1,11 +1,18 @@
+using PaymentProcessorDotnet.Factory;
+using PaymentProcessorDotnet.FluentValidations;
+using PaymentProcessorDotnet.Interfaces.Payment;
 using PaymentProcessorDotnet.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+builder.Services.AddDataProtection();
 builder.Services.AddSingleton<PaymentService>();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped<PaymentValidator>();
+builder.Services.AddScoped<IPaymentStrategy, PaymentFactory>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

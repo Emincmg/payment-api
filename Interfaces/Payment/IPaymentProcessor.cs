@@ -4,5 +4,5 @@ namespace PaymentProcessorDotnet.Interfaces.Payment;
 
 public interface IPaymentProcessor
 {
-    public Task<PaymentDto> Process(PaymentDto dto);
+    public Task<PaymentDto>? Process();
 }

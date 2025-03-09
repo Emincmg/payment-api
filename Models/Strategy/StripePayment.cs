@@ -34,4 +34,9 @@ public class StripePayment : IPayment
     {
         throw new NotImplementedException();
     }
+
+    public Task<PaymentDto>? Process()
+    {
+        throw new NotImplementedException();
+    }
 }

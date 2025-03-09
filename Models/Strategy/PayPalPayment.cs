@@ -42,5 +42,10 @@ namespace PaymentProcessorDotnet.Models.Strategy
         {
             throw new NotImplementedException();
         }
+
+        public Task<PaymentDto>? Process()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
