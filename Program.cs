@@ -1,3 +1,5 @@
+using System.Reflection;
+using FluentValidation;
 using PaymentProcessorApi.Factory;
 using PaymentProcessorApi.FluentValidations;
 using PaymentProcessorApi.Interfaces.Payment;
@@ -8,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddDataProtection();
-builder.Services.AddSingleton<PaymentService>();
+builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<PaymentService>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<PaymentValidator>();
 builder.Services.AddScoped<IPaymentStrategy, PaymentFactory>();

@@ -25,7 +25,7 @@ namespace PaymentProcessorApi.Models.Strategy
 
         public Task<PaymentDto> Process(PaymentDto paymentDto)
         {
-            return null;
+            return null!;
         }
 
         public PaymentDto Decline(PaymentDto dto)
