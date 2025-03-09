@@ -1,8 +1,8 @@
-using PaymentProcessorDotnet.FluentValidations;
-using PaymentProcessorDotnet.DTOs;
-using PaymentProcessorDotnet.Interfaces.Payment;
+using PaymentProcessorApi.DTOs;
+using PaymentProcessorApi.FluentValidations;
+using PaymentProcessorApi.Interfaces.Payment;
 
-namespace PaymentProcessorDotnet.Services;
+namespace PaymentProcessorApi.Services;
 
 public class PaymentService
 {

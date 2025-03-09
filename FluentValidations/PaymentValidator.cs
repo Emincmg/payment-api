@@ -1,8 +1,8 @@
 using FluentValidation;
-using PaymentProcessorDotnet.Interfaces.Payment;
-using PaymentProcessorDotnet.Models.Strategy;
+using PaymentProcessorApi.Interfaces.Payment;
+using PaymentProcessorApi.Models.Strategy;
 
-namespace PaymentProcessorDotnet.FluentValidations;
+namespace PaymentProcessorApi.FluentValidations;
 
 public class PaymentValidator
 {

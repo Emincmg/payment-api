@@ -1,7 +1,7 @@
-using PaymentProcessorDotnet.DTOs;
-using PaymentProcessorDotnet.Interfaces.Payment;
+using PaymentProcessorApi.DTOs;
+using PaymentProcessorApi.Interfaces.Payment;
 
-namespace PaymentProcessorDotnet.Models.Strategy;
+namespace PaymentProcessorApi.Models.Strategy;
 
 public class StripePayment : IPayment
 {

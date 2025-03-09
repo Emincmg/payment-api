@@ -1,6 +1,6 @@
-using PaymentProcessorDotnet.DTOs;
+using PaymentProcessorApi.DTOs;
 
-namespace PaymentProcessorDotnet.Interfaces.Payment;
+namespace PaymentProcessorApi.Interfaces.Payment;
 
 public interface IPaymentDecliner
 {

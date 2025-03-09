@@ -1,4 +1,4 @@
-namespace PaymentProcessorDotnet.DTOs;
+namespace PaymentProcessorApi.DTOs;
 
 public class PaymentDto
 {

@@ -1,9 +1,9 @@
 using AutoMapper;
-using PaymentProcessorDotnet.DTOs;
-using PaymentProcessorDotnet.Interfaces;
-using PaymentProcessorDotnet.Interfaces.Payment;
+using PaymentProcessorApi.DTOs;
+using PaymentProcessorApi.Interfaces.Payment;
+using PaymentProcessorApi.Interfaces;
 
-namespace PaymentProcessorDotnet.Mappings;
+namespace PaymentProcessorApi.Mappings;
 
 public class PaymentProfile : Profile
 {

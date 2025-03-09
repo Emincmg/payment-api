@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
-using PaymentProcessorDotnet.Services;
-using PaymentProcessorDotnet.DTOs;
+using PaymentProcessorApi.DTOs;
+using PaymentProcessorApi.Services;
 
-namespace PaymentProcessorDotnet.Controllers
+namespace PaymentProcessorApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

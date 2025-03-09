@@ -1,4 +1,4 @@
-namespace PaymentProcessorDotnet.Interfaces.Payment;
+namespace PaymentProcessorApi.Interfaces.Payment;
 
 public interface IPayment :  IPaymentProcessor, IPaymentDecliner, IPaymentSuccessor
 {

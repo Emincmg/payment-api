@@ -1,13 +1,12 @@
-using PaymentProcessorDotnet.Factory;
-using PaymentProcessorDotnet.FluentValidations;
-using PaymentProcessorDotnet.Interfaces.Payment;
-using PaymentProcessorDotnet.Services;
+using PaymentProcessorApi.Factory;
+using PaymentProcessorApi.FluentValidations;
+using PaymentProcessorApi.Interfaces.Payment;
+using PaymentProcessorApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddControllers();
 builder.Services.AddDataProtection();
 builder.Services.AddSingleton<PaymentService>();
 builder.Services.AddAutoMapper(typeof(Program));
@@ -28,12 +27,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+app.MapControllers();
 
 app.Run();

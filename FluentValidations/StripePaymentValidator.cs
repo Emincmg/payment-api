@@ -1,7 +1,7 @@
 using FluentValidation;
-using PaymentProcessorDotnet.Models.Strategy;
+using PaymentProcessorApi.Models.Strategy;
 
-namespace PaymentProcessorDotnet.FluentValidations;
+namespace PaymentProcessorApi.FluentValidations;
 
 public class StripePaymentValidator : AbstractValidator<StripePayment>
 {
